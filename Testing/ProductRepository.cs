@@ -25,7 +25,7 @@ namespace Testing
         }
         public IEnumerable<Product> GetAllProducts()
         {
-            return _conn.Query<Product>("SELECT * FROM PRODUCTS;");
+            return _conn.Query<Product>("SELECT * FROM product;");
         }
         public void UpdateProduct(Product product)
         {
@@ -35,27 +35,32 @@ namespace Testing
         }
         public void InsertProduct(Product productToInsert)
         {
-            _conn.Execute("INSERT INTO products (NAME, PRICE, CATEGORYID) VALUES (@name, @price, @categoryID);",
-                new { name = productToInsert.Name, price = productToInsert.Price, categoryID = productToInsert.CategoryID });
+            _conn.Execute("INSERT INTO products (NAME, PRICE) VALUES (@name, @price);",
+                new { name = productToInsert.Name, price = productToInsert.Price });
         }
         public IEnumerable<Category> GetCategories()
         {
-            return _conn.Query<Category>("SELECT * FROM categories;");
+            return _conn.Query<Category>("SELECT * FROM product;");
         }
-        public Product AssignCategory()
-        {
-            var categoryList = GetCategories();
-            var product = new Product();
-            product.Categories = categoryList;
+        //public Product AssignCategory()
+        //{
+        //    var categoryList = GetCategories();
+        //    var product = new Product();
+        //    product.Categories = categoryList;
 
-            return product;
-        }
+        //    return product;
+        //}
+        //public void DeleteProduct(Product product)
+        //{
+        //    _conn.Execute("DELETE FROM REVIEWS WHERE ProductID = @id;", new { id = product.ProductID });
+        //    _conn.Execute("DELETE FROM Sales WHERE ProductID = @id;", new { id = product.ProductID });
+        //    _conn.Execute("DELETE FROM Products WHERE ProductID = @id;", new { id = product.ProductID });
+        //}
+
+
         public void DeleteProduct(Product product)
         {
-            _conn.Execute("DELETE FROM REVIEWS WHERE ProductID = @id;", new { id = product.ProductID });
-            _conn.Execute("DELETE FROM Sales WHERE ProductID = @id;", new { id = product.ProductID });
-            _conn.Execute("DELETE FROM Products WHERE ProductID = @id;", new { id = product.ProductID });
+            throw new NotImplementedException();
         }
-
     }
 }

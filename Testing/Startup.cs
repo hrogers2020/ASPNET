@@ -28,7 +28,7 @@ namespace Testing
         {
             services.AddScoped<IDbConnection>((s) =>
             {
-                IDbConnection conn = new MySqlConnection(Configuration.GetConnectionString("bestbuy"));
+                IDbConnection conn = new MySqlConnection(Configuration.GetConnectionString("instrument_database"));
                 conn.Open();
                 return conn;
             });

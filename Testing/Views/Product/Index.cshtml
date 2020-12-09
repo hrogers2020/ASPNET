@@ -2,18 +2,19 @@
 
 <h2>Products</h2>
 
-<div style="display: block">
+@*<div style="display: block">
     <a href="/Product/InsertProduct/">Create a New Product</a>
-</div>
+</div>*@
 
 <table class="table">
     <tr>
-        <th>ID</th>
+        <th>ProductID</th>
         <th>Name</th>
         <th>Price</th>
-        <th>Category ID</th>
-        <th>On Sale</th>
+        <th>InstrumentType</th>
         <th>Stock Level</th>
+        <th>Year</th>
+        <th>Condition</th>
     </tr>
 
     @foreach (var product in Model)
@@ -22,9 +23,10 @@
             <td><a href=/Product/ViewProduct/@product.ProductID>@product.ProductID</a></td>
             <td>@product.Name</td>
             <td>@product.Price</td>
-            <td>@product.CategoryID</td>
-            <td>@product.OnSale</td>
+            <td>@product.InstrumentType</td>
             <td>@product.StockLevel</td>
+            <td>@product.Year</td>
+            <td>@product.Condition</td>
         </tr>
 
     }

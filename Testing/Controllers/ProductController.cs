@@ -50,7 +50,7 @@ namespace Testing.Controllers
         }
         public IActionResult InsertProduct()
         {
-            var prod = repo.AssignCategory();
+            var prod = new Product();
 
             return View(prod);
         }
