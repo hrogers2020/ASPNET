@@ -49,5 +49,19 @@ namespace Testing.Controllers
             return View();
         }
 
+        public IActionResult Repairs()
+        {
+            ViewData["Message"] = "List of Services and Repairs";
+
+            return View();
+        }
+
+        public IActionResult Login()
+        {
+            ViewData["Message"] = "Login/Create an account ";
+
+            return View();
+        }
+
     }
 }

@@ -19,8 +19,8 @@ namespace Testing.Models
         public int StockLevel { get; set; }
         public int Year { get; set; }
         public string Condition { get; set; }
+        public string PhotoLink { get; set; }
 
-        //public string PhotoLink { get; set; }
         //public IEnumerable<Category> Categories { get; set; }
 
     }

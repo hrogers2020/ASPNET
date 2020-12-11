@@ -1,7 +1,7 @@
 ﻿@{
-    ViewData["Title"] = "Contact";
+    ViewData["Title"] = "Contact Us";
 }
-<h2>@ViewData["Title"]</h2>
+<h2><font color="#17a2b8">@ViewData["Title"]</font></h2>
 <address>
     3695  Kessla Way<br />
     Darlington, SC 29532<br />
@@ -13,3 +13,28 @@
     <strong>Support:</strong> <a href="mailto:Support@example.com">Support@Jimbo22.com</a><br />
     <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@Jimbo22.com</a>
 </address>
+
+<button class="btn btn-info" data-toggle="modal" data-target="#myModal">Click for a Surprise</button>
+
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Have Questions?</h4>
+            </div>
+            <div class="modal-body">
+                <p>Wanna text Jimbo directly with your questions??</p>
+            </div>
+            <div class="container" style="margin-top:20px;">
+                <form>
+                    <label>(843) 616-1432</label>
+                    <input type="text" @*class="form-control" *@ />
+                    <button type="submit" class="btn btn-primary">Text Jimbo!</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
